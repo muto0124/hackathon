@@ -1,104 +1,93 @@
-# T-AI-DA Design
+# T-AI-DA 設計メモ
 
-## Purpose
+## 目的
 
-Prepare the document package for the AWS Summit Japan 2026 AI-DLC Hackathon
-document screening. The submission will be a public GitHub repository containing
-README and AI-DLC Inception phase artifacts.
+AWS Summit Japan 2026 AI-DLC ハッカソンの書類審査に向けて、提出用ドキュメント一式の設計方針を定義する。
 
-## Product Concept
+提出物は公開 GitHub リポジトリとし、審査員向けの `README.md` と、AI-DLC の Inception フェーズ成果物を含める。
 
-T-AI-DA is an AWS-based decision delegation service for single-person
-businesspeople who are tired of making everyday life decisions.
+## プロダクトコンセプト
 
-The name combines "Taida" (laziness) and "AI". The concept is to thoroughly
-spoil the user by removing small daily decisions. The service starts with a
-morning "today's life plan" and supports an on-demand instant decision button.
+T-AI-DA は、日常の小さな意思決定に疲れた一人暮らしのビジネスパーソンに向けた、AWS ベースの意思決定代行サービスである。
 
-The final vision is an "life OS" that delegates decisions across daily life,
-consumption, lifestyle, health-related routines, and relationships, while the
-MVP focuses on low-risk daily decisions.
+名称は「怠惰（Taida）」と「AI」を組み合わせたもの。コンセプトは、人を徹底的に甘やかし、日々の小さな意思決定を奪うことにある。サービスは朝の「今日の人生プラン」生成から始まり、必要に応じて使える「即決ボタン」を提供する。
 
-## Target User
+最終ビジョンは、日常生活、消費、ライフスタイル、健康関連ルーティン、人間関係まで、低リスクな意思決定を段階的に代行する「人生 OS」である。一方で MVP は、低リスクな日常判断に範囲を絞る。
 
-The primary persona is a single-person business professional who has used most
-of their cognitive energy at work and does not want to decide what to eat, wear,
-buy, or do after work.
+## 対象ユーザー
 
-## Core Experience
+主要ペルソナは、一人暮らしのビジネスパーソンである。
 
-T-AI-DA provides two main MVP experiences:
+仕事で認知リソースを使い切っており、退勤後や休日に「何を食べるか」「何を着るか」「何を買うか」「何をするか」を考えたくないユーザーを対象にする。
 
-1. Morning life plan generation
-   - Decides meals, clothes, movement, shopping preparation, and evening plans.
-   - Presents a single recommended plan instead of a comparison-heavy list.
+## 中核体験
 
-2. Instant decision button
-   - Handles small questions such as what to eat, whether to buy something, or
-     how to spend spare time.
-   - Returns one decision with a short reason and preparation steps.
+T-AI-DA は MVP として、主に 2 つの体験を提供する。
 
-The product personality is an overprotective but slightly sarcastic butler. It
-comforts the user while quietly weakening their decision-making muscles.
+1. 朝の人生プラン生成
+   - 食事、服装、移動、買い物準備、夜の過ごし方を決める。
+   - 比較候補の一覧ではなく、実行しやすい一択の推奨プランを提示する。
 
-## Laziness Level Model
+2. 即決ボタン
+   - 「何を食べるか」「買うべきか」「空き時間をどう使うか」といった小さな迷いを扱う。
+   - 短い理由と準備手順を添えて、一つの決定を返す。
 
-The service uses a progressive delegation model.
+プロダクトの人格は「過保護だが少し皮肉な執事」とする。ユーザーを安心させながら、静かに意思決定筋を弱らせていく。
 
-1. Suggestion mode
-   - T-AI-DA proposes decisions and the user chooses.
+## 怠惰レベルモデル
 
-2. Semi-automatic mode
-   - T-AI-DA decides by default, but the user can reject or revise.
+サービスは、段階的な意思決定委譲モデルを採用する。
 
-3. Automatic low-risk mode
-   - For safe daily domains, T-AI-DA makes the decision and prepares the next
-     action.
+1. 提案モード
+   - T-AI-DA が判断候補を提示し、ユーザーが選ぶ。
 
-This progression is represented as a "laziness level". It turns the hackathon
-theme into a product mechanic: the more useful T-AI-DA becomes, the less the
-user has to decide.
+2. 半自動モード
+   - T-AI-DA が標準で決定するが、ユーザーは差し戻しや修正ができる。
 
-## Scope And Guardrails
+3. 低リスク自動決定モード
+   - 安全な日常領域では、T-AI-DA が決定し、次の行動準備まで行う。
 
-MVP scope:
+この進行は「怠惰レベル」として表現する。T-AI-DA が便利になるほどユーザーが決める必要がなくなる、というハッカソンテーマをプロダクト機能そのものに変換する。
 
-- Meals
-- Clothes
-- Daily schedule suggestions
-- Shopping candidates
-- Weekend or evening plans
-- Preparation support such as shopping lists, store candidates, routes, and
-  order links
+## スコープとガードレール
 
-Future scope:
+MVP の対象範囲:
 
-- Purchase history
-- Calendar and health logs
-- Lifestyle optimization
-- Relationship-related suggestions with strict limits
+- 食事
+- 服装
+- 日々の予定提案
+- 買い物候補
+- 週末や夜の過ごし方
+- 買い物リスト、店舗候補、ルート、注文リンクなどの準備支援
 
-Out of scope or approval-required decisions:
+将来的な対象範囲:
 
-- High-value purchases
-- Medical diagnosis or treatment decisions
-- Legal, contract, employment, resignation, and breakup decisions
-- Any decision with serious financial, health, legal, or relationship impact
+- 購買履歴
+- カレンダーと健康ログ
+- ライフスタイル最適化
+- 厳格な制限付きの人間関係関連提案
 
-## Submission Package
+対象外、または明示的な承認が必要な意思決定:
 
-The repository will use two layers:
+- 高額購入
+- 医療診断や治療判断
+- 法務、契約、雇用、退職、別れに関する判断
+- 金融、健康、法律、人間関係に重大な影響を与える判断
 
-1. README for judges
-   - Product one-liner
-   - Target user and pain
-   - Business intent
-   - Theme fit
-   - MVP experience
-   - AWS architecture summary
-   - Links to AI-DLC artifacts
+## 提出パッケージ
 
-2. AI-DLC artifacts under `aidlc-docs/`
+リポジトリは 2 層構造にする。
+
+1. 審査員向け README
+   - プロダクトの一文説明
+   - 対象ユーザーと課題
+   - ビジネス意図
+   - テーマ適合性
+   - MVP 体験
+   - AWS アーキテクチャ概要
+   - AI-DLC 成果物へのリンク
+
+2. `aidlc-docs/` 配下の AI-DLC 成果物
    - `aidlc-docs/aidlc-state.md`
    - `aidlc-docs/audit.md`
    - `aidlc-docs/inception/requirements/requirements.md`
@@ -115,53 +104,49 @@ The repository will use two layers:
    - `aidlc-docs/inception/application-design/unit-of-work-dependency.md`
    - `aidlc-docs/inception/application-design/unit-of-work-story-map.md`
 
-## Initial Unit Breakdown
+## 初期 Unit 分解
 
 1. Decision Orchestrator
-   - Builds the morning life plan and instant decisions.
+   - 朝の人生プランと即決判断を組み立てる。
 
 2. User Context
-   - Manages MVP context such as weather, schedule, preferences, location, and
-     budget.
+   - 天気、予定、好み、位置情報、予算など、MVP に必要な文脈を管理する。
 
 3. T-AI-DA Persona
-   - Generates the overprotective but slightly sarcastic butler experience.
+   - 過保護だが少し皮肉な執事としての応答体験を生成する。
 
 4. Laziness Level
-   - Controls the transition from suggestion to semi-automatic and low-risk
-     automatic decisions.
+   - 提案型、半自動型、低リスク自動決定型への移行を制御する。
 
 5. Safety Guardrails
-   - Detects high-risk decision domains and forces approval or rejection.
+   - 高リスクな意思決定領域を検出し、承認要求または拒否へ誘導する。
 
 6. Preparation Assistant
-   - Produces shopping lists, store candidates, routes, and order links.
+   - 買い物リスト、店舗候補、ルート、注文リンクを生成する。
 
-## Judging Strategy
+## 審査戦略
 
-The document package will intentionally map to the document-screening criteria:
+ドキュメントパッケージは、書類審査基準に意図的に対応させる。
 
-- Business intent clarity
-  - Show decision fatigue as the core pain and T-AI-DA as a deliberate decision
-    delegation system.
+- ビジネス意図（Intent）の明確さ
+  - 「決断疲れ」を中核課題として示し、T-AI-DA を明確な意思決定代行システムとして表現する。
 
-- Unit decomposition appropriateness
-  - Make the units explicit and connect each unit to stories and responsibilities.
+- Unit 分解の適切さ
+  - Unit を明示し、それぞれの責務とユーザーストーリーを接続する。
 
-- Creativity and theme fit
-  - Present "laziness level" as the central product mechanic.
+- 創造性とテーマ適合性
+  - 「怠惰レベル」を中核のプロダクトメカニクスとして提示する。
 
-- Document quality
-  - Keep the README easy to scan and the AI-DLC artifacts traceable, consistent,
-    and structured.
+- ドキュメントの品質
+  - `README.md` は審査員が短時間で把握しやすい構成にし、AI-DLC 成果物は追跡可能で一貫した構造にする。
 
-## Approval Status
+## 承認状況
 
-The user approved:
+ユーザーは以下を承認済み。
 
-- Product direction: "laziness level increases" decision OS
-- Name: T-AI-DA
-- MVP scope: morning life plan plus instant decision button
-- Target user: single-person decision-fatigued business professional
-- Guardrail strategy: low-risk MVP, constrained future expansion
-- Submission package structure
+- プロダクト方針: 怠惰レベルが上がる意思決定 OS
+- 名称: T-AI-DA
+- MVP スコープ: 朝の人生プランと即決ボタン
+- 対象ユーザー: 一人暮らしの決断疲れビジネスパーソン
+- ガードレール方針: MVP は低リスク領域に限定し、将来拡張も制約付きで行う
+- 提出パッケージ構成
