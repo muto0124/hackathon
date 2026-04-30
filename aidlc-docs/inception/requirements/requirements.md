@@ -31,7 +31,7 @@ T-AI-DA は、仕事や生活で判断を重ねたユーザーが、朝や退勤
 | --- | --- | --- |
 | NFR-001 | 低リスク領域を明確に制限する安全性 | MVP の自動化対象は生活上の低リスク判断に限定し、高リスク領域は Safety Guardrails が必ず制限する。 |
 | NFR-002 | ユーザーが理由を理解できる説明可能性 | 提案や一択回答には、天気、予定、好み、予算などの根拠を短く添える。 |
-| NFR-003 | 朝の利用に耐える応答速度 | 朝の生活プランと即決ボタンは、忙しい時間帯でも待ち時間が負担にならない応答速度を目指す。 |
+| NFR-003 | 朝の利用に耐える応答速度 | 朝の生活プランと即決ボタンは、初期表示を数秒以内に返す設計を目指す。詳細生成に時間がかかる場合は、先に要約や一択回答を返し、補足情報を分けて生成する。 |
 | NFR-004 | 個人文脈データのプライバシー保護 | 予定、位置情報、好み、予算などの個人文脈データは、目的を限定し、不要な保持や過剰な共有を避ける。 |
 | NFR-005 | 将来の外部連携に耐える拡張性 | 購買、カレンダー、健康ログ、地図、注文サービスなどの将来連携を、コンポーネント単位で追加できる構成にする。 |
 
@@ -41,9 +41,10 @@ T-AI-DA は、仕事や生活で判断を重ねたユーザーが、朝や退勤
 | --- | --- | --- | --- |
 | DCR-001 | 天気 | 服装、移動、外出、食事候補の判断に利用する。 | 例: 雨なら屋内寄り、暑ければ軽装を提案する。 |
 | DCR-002 | 予定 | 朝の生活プラン、移動余裕、夜の過ごし方の判断に利用する。 | カレンダー連携は将来拡張可能にする。 |
-| DCR-003 | 好み | 食事、服装、買い物、余暇提案の絞り込みに利用する。 | 明示設定と過去反応の両方を将来扱えるようにする。 |
+| DCR-003 | 好み | 食事、服装、買い物、余暇提案の絞り込みに利用する。 | 明示設定を中心に扱い、判断後の反応は DCR-006 として分けて管理する。 |
 | DCR-004 | 位置情報 | 店舗候補、移動ルート、近場の選択肢の判断に利用する。 | 必要時のみ利用し、プライバシーに配慮する。 |
 | DCR-005 | 予算 | 買い物候補、食事候補、注文リンクの絞り込みに利用する。 | 高額購入は Safety Guardrails の対象にする。 |
+| DCR-006 | 軽量フィードバック / 判断履歴 | 受諾、拒否、修正、ユーザー訂正、過去の低リスク判断履歴を、怠惰レベルの調整に利用する。 | MVP では低リスク判断に関する最小限の履歴に限定し、不要な個人文脈の長期保持や過剰な推測を避ける。 |
 
 ## Safety and Guardrails
 
@@ -78,3 +79,9 @@ T-AI-DA は、仕事や生活で判断を重ねたユーザーが、朝や退勤
 | NFR-003 | Q-002, Q-007 | Decision Orchestrator | execution-plan.md |
 | NFR-004 | Q-005 | User Context | application-design/services.md |
 | NFR-005 | Q-008 | Preparation Assistant, User Context | execution-plan.md |
+| DCR-001 | Q-005 | User Context | application-design/services.md, component-dependency.md |
+| DCR-002 | Q-005 | User Context | application-design/services.md, component-dependency.md |
+| DCR-003 | Q-005 | User Context | application-design/services.md, component-dependency.md |
+| DCR-004 | Q-005 | User Context | application-design/services.md, component-dependency.md |
+| DCR-005 | Q-005 | User Context | application-design/services.md, component-dependency.md |
+| DCR-006 | Q-004, Q-005 | User Context, Laziness Level | application-design/components.md, application-design/services.md |
