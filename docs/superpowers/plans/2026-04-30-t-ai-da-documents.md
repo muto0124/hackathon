@@ -108,10 +108,10 @@ T-AI-DA は、日常の小さな意思決定に疲れた一人暮らしのビジ
 
 - [ ] **Step 3: MVP 体験を書く**
 
-`## MVP 体験` に、朝の人生プラン生成と即決ボタンを書く。
+`## MVP 体験` に、朝の生活プラン生成と即決ボタンを書く。
 
 ```markdown
-1. 朝の人生プラン生成
+1. 朝の生活プラン生成
 2. 即決ボタン
 ```
 
@@ -125,7 +125,7 @@ T-AI-DA は、日常の小さな意思決定に疲れた一人暮らしのビジ
 - AWS Lambda: 意思決定オーケストレーション
 - Amazon API Gateway: API エントリポイント
 - Amazon DynamoDB: ユーザー設定、怠惰レベル、意思決定履歴
-- Amazon EventBridge Scheduler: 朝の人生プラン生成トリガー
+- Amazon EventBridge Scheduler: 朝の生活プラン生成トリガー
 - Amazon S3: ドキュメント、静的アセット、将来の UI 配信候補
 - Amazon CloudWatch: ログ、監視、意思決定実行状況の観測
 
@@ -178,7 +178,7 @@ git commit -m "docs: add T-AI-DA overview README"
 
 - ハッカソン要件の確認
 - コンセプトを「意思決定代行 IT サービス」に決定
-- MVP を「朝の人生プラン + 即決ボタン」に決定
+- MVP を「朝の生活プラン + 即決ボタン」に決定
 - 名称を `T-AI-DA` に決定
 - 安全境界を低リスク領域中心に決定
 - 提出パッケージ構成を承認
@@ -248,7 +248,7 @@ git commit -m "docs: add AI-DLC state and audit trail"
 
 Functional Requirements には最低限次を含める。
 
-- FR-001: 朝の人生プランを生成する
+- FR-001: 朝の生活プランを生成する
 - FR-002: 即決ボタンで小さな迷いに一択回答する
 - FR-003: 怠惰レベルに応じて提案型、半自動型、低リスク自動決定型を切り替える
 - FR-004: 買い物リスト、店舗候補、ルート、注文リンクなどの準備支援を生成する
@@ -311,7 +311,7 @@ git commit -m "docs: add AI-DLC requirements for T-AI-DA"
 
 必須ストーリー:
 
-- 朝の人生プランを受け取る
+- 朝の生活プランを受け取る
 - 食事を一択で決めてもらう
 - 服装を決めてもらう
 - 買い物候補と準備リストを受け取る
@@ -424,7 +424,7 @@ git commit -m "docs: add AI-DLC execution plan"
 
 ```markdown
 ### Decision Orchestrator
-- `generateMorningPlan(userId, date, context)`: 朝の人生プランを生成する。
+- `generateMorningPlan(userId, date, context)`: 朝の生活プランを生成する。
 - `decideNow(userId, decisionRequest, context)`: 即決ボタンの一択判断を生成する。
 ```
 

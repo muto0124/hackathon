@@ -83,7 +83,7 @@ T-AI-DA は、仕事や生活で判断を重ねたユーザーが、朝や退勤
 | FR-007      | Q-005                      | User Context                          | application-design/services.md, component-dependency.md                |
 | NFR-001     | Q-001, Q-010               | Safety Guardrails                     | application-design/application-design.md                               |
 | NFR-002     | Q-003, Q-005               | T-AI-DA Persona, User Context         | user-stories/stories.md                                                |
-| NFR-003     | Q-002, Q-007               | Decision Orchestrator                 | execution-plan.md                                                      |
+| NFR-003     | Q-002, Q-007               | Decision Orchestrator, Notification and Delivery | execution-plan.md, application-design/unit-of-work-story-map.md |
 | NFR-004     | Q-005                      | User Context                          | application-design/services.md                                         |
 | NFR-005     | Q-008                      | Preparation Assistant, User Context   | execution-plan.md                                                      |
 | DCR-001     | Q-005                      | User Context                          | application-design/services.md, component-dependency.md                |

@@ -51,12 +51,20 @@ MVP では Level 1 から Level 2 を中心に扱い、高額購入、医療、�
 
 ## AI-DLC Inception 成果物
 
+### 状態とログ
+
 - [AI-DLC 状態管理](aidlc-docs/aidlc-state.md)
 - [監査ログ](aidlc-docs/audit.md)
+
+### Requirements / User Stories
+
 - [要求定義](aidlc-docs/inception/requirements/requirements.md)
 - [要求検証質問](aidlc-docs/inception/requirements/requirement-verification-questions.md)
 - [ペルソナ](aidlc-docs/inception/user-stories/personas.md)
 - [ユーザーストーリー](aidlc-docs/inception/user-stories/stories.md)
+
+### Workflow / Application Design / Units
+
 - [実行計画](aidlc-docs/inception/plans/execution-plan.md)
 - [アプリケーション設計](aidlc-docs/inception/application-design/application-design.md)
 - [コンポーネント](aidlc-docs/inception/application-design/components.md)
@@ -66,6 +74,12 @@ MVP では Level 1 から Level 2 を中心に扱い、高額購入、医療、�
 - [作業単位](aidlc-docs/inception/application-design/unit-of-work.md)
 - [作業単位依存関係](aidlc-docs/inception/application-design/unit-of-work-dependency.md)
 - [作業単位とストーリーの対応](aidlc-docs/inception/application-design/unit-of-work-story-map.md)
+
+### AI-DLC 実行判断
+
+- [User Stories 実行判断](aidlc-docs/inception/plans/user-stories-assessment.md)
+- [Application Design 実行計画](aidlc-docs/inception/plans/application-design-plan.md)
+- [Unit of Work 実行計画](aidlc-docs/inception/plans/unit-of-work-plan.md)
 
 ## 審査基準への対応
 
