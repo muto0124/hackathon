@@ -42,11 +42,12 @@ MVP では Level 1 から Level 2 を中心に扱い、高額購入、医療、�
 
 - Amazon Bedrock: 意思決定生成と人格応答
 - AWS Lambda: 意思決定オーケストレーション
-- Amazon API Gateway: API エントリポイント
-- Amazon DynamoDB: ユーザー設定、怠惰レベル、意思決定履歴
+- Amazon API Gateway: API エントリポイント、in-app での結果配信
+- Amazon DynamoDB: ユーザー設定、怠惰レベル、意思決定履歴、生成済み生活プランの保管
 - Amazon EventBridge Scheduler: 朝の生活プラン生成トリガー
 - Amazon S3: ドキュメント、静的アセット、将来の UI 配信候補
 - Amazon CloudWatch: ログ、監視、意思決定実行状況の観測
+- Future: Amazon SNS / Amazon Pinpoint: 朝のプラン通知や即決結果の push 配信
 
 ## AI-DLC Inception 成果物
 
@@ -76,7 +77,15 @@ MVP では Level 1 から Level 2 を中心に扱い、高額購入、医療、�
 
 ## 今後の展開
 
+書類審査通過後の Construction フェーズで、以下を MVP プロトタイプとして実装します。
+
+- Slice 1: Safe Instant Decision (即決ボタンと Safety Guardrails)
+- Slice 2: Morning Lifestyle Plan (朝の生活プランと準備支援)
+- Slice 3: Laziness Level (委譲モードと怠惰レベル可視化)
+
+その後の拡張方針は次の通りです。
+
 - カレンダー、位置情報、購買履歴などの連携によるコンテキスト精度の向上
 - 怠惰レベルに応じた半自動化範囲の拡大
 - 家族、チーム、旅行など複数人の低リスク判断への応用
-- UI プロトタイプ、デモシナリオ、評価指標の追加
+- Amazon SNS / Pinpoint による朝の push 通知などの配信チャネル追加

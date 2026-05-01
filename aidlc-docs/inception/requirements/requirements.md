@@ -34,7 +34,7 @@ T-AI-DA は、仕事や生活で判断を重ねたユーザーが、朝や退勤
 | ------- | ------------------ | --------------------------------------------------------------------------- |
 | NFR-001 | 低リスク領域を明確に制限する安全性  | MVP の自動化対象は生活上の低リスク判断に限定し、高リスク領域は Safety Guardrails が必ず制限する。                |
 | NFR-002 | ユーザーが理由を理解できる説明可能性 | 提案や一択回答には、天気、予定、好み、予算などの根拠を短く添える。                                           |
-| NFR-003 | 朝の利用に耐える応答速度       | 朝の生活プランと即決ボタンは、初期表示を数秒以内に返す設計を目指す。詳細生成に時間がかかる場合は、先に要約や一択回答を返し、補足情報を分けて生成する。 |
+| NFR-003 | 初期表示の応答速度          | 朝の生活プランと即決ボタンは、初期表示を数秒以内に返す設計を目指す。詳細生成に時間がかかる場合は、先に要約や一択回答を返し、補足情報を分けて生成する。 |
 | NFR-004 | 個人文脈データのプライバシー保護   | 予定、位置情報、好み、予算などの個人文脈データは、目的を限定し、不要な保持や過剰な共有を避ける。                            |
 | NFR-005 | 将来の外部連携に耐える拡張性     | 購買、カレンダー、健康ログ、地図、注文サービスなどの将来連携を、コンポーネント単位で追加できる構成にする。                       |
 
@@ -79,7 +79,7 @@ T-AI-DA は、仕事や生活で判断を重ねたユーザーが、朝や退勤
 | FR-003      | Q-004, Q-009               | Laziness Level                        | application-design/components.md, unit-of-work.md                      |
 | FR-004      | Q-001, Q-008               | Preparation Assistant                 | application-design/services.md, unit-of-work-story-map.md              |
 | FR-005      | Q-010                      | Safety Guardrails                     | application-design/component-dependency.md, unit-of-work-dependency.md |
-| FR-006      | Q-003                      | T-AI-DA Persona                       | user-stories/personas.md, application-design/components.md             |
+| FR-006      | Q-003                      | T-AI-DA Persona                       | user-stories/personas.md, user-stories/stories.md, application-design/components.md |
 | FR-007      | Q-005                      | User Context                          | application-design/services.md, component-dependency.md                |
 | NFR-001     | Q-001, Q-010               | Safety Guardrails                     | application-design/application-design.md                               |
 | NFR-002     | Q-003, Q-005               | T-AI-DA Persona, User Context         | user-stories/stories.md                                                |

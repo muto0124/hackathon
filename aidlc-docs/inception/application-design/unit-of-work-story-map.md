@@ -9,7 +9,7 @@
 | US-003 | 服装を決めてもらう | UOW-02 Context and Preference Memory | UOW-01, UOW-06 |
 | US-004 | 買い物候補と準備リストを受け取る | UOW-05 Preparation and Recommendation Delivery | UOW-01, UOW-02, UOW-04 |
 | US-005 | 即決ボタンで迷いを投げる | UOW-01 Decision Core | UOW-02, UOW-04, UOW-06 |
-| US-006 | 怠惰レベルが上がる | UOW-03 Laziness Level and Delegation Control | UOW-02, UOW-04 |
+| US-006 | 怠惰レベルが上がる | UOW-03 Laziness Level and Delegation Control | UOW-02, UOW-04, UOW-06 |
 | US-007 | 高リスク判断で承認を求められる | UOW-04 Safety Guardrails | UOW-01, UOW-06 |
 | US-008 | 低リスクな準備支援を受ける | UOW-05 Preparation and Recommendation Delivery | UOW-01, UOW-02, UOW-06 |
 
