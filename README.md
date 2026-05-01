@@ -42,20 +42,29 @@ MVP では Level 1 から Level 2 を中心に扱い、高額購入、医療、�
 
 - Amazon Bedrock: 意思決定生成と人格応答
 - AWS Lambda: 意思決定オーケストレーション
-- Amazon API Gateway: API エントリポイント
-- Amazon DynamoDB: ユーザー設定、怠惰レベル、意思決定履歴
+- Amazon API Gateway: API エントリポイント、in-app での結果配信
+- Amazon DynamoDB: ユーザー設定、怠惰レベル、意思決定履歴、生成済み生活プランの保管
 - Amazon EventBridge Scheduler: 朝の生活プラン生成トリガー
 - Amazon S3: ドキュメント、静的アセット、将来の UI 配信候補
 - Amazon CloudWatch: ログ、監視、意思決定実行状況の観測
+- Future: Amazon SNS / Amazon Pinpoint: 朝のプラン通知や即決結果の push 配信
 
 ## AI-DLC Inception 成果物
 
+### 状態とログ
+
 - [AI-DLC 状態管理](aidlc-docs/aidlc-state.md)
 - [監査ログ](aidlc-docs/audit.md)
+
+### Requirements / User Stories
+
 - [要求定義](aidlc-docs/inception/requirements/requirements.md)
 - [要求検証質問](aidlc-docs/inception/requirements/requirement-verification-questions.md)
 - [ペルソナ](aidlc-docs/inception/user-stories/personas.md)
 - [ユーザーストーリー](aidlc-docs/inception/user-stories/stories.md)
+
+### Workflow / Application Design / Units
+
 - [実行計画](aidlc-docs/inception/plans/execution-plan.md)
 - [アプリケーション設計](aidlc-docs/inception/application-design/application-design.md)
 - [コンポーネント](aidlc-docs/inception/application-design/components.md)
@@ -65,6 +74,12 @@ MVP では Level 1 から Level 2 を中心に扱い、高額購入、医療、�
 - [作業単位](aidlc-docs/inception/application-design/unit-of-work.md)
 - [作業単位依存関係](aidlc-docs/inception/application-design/unit-of-work-dependency.md)
 - [作業単位とストーリーの対応](aidlc-docs/inception/application-design/unit-of-work-story-map.md)
+
+### AI-DLC 実行判断
+
+- [User Stories 実行判断](aidlc-docs/inception/plans/user-stories-assessment.md)
+- [Application Design 実行計画](aidlc-docs/inception/plans/application-design-plan.md)
+- [Unit of Work 実行計画](aidlc-docs/inception/plans/unit-of-work-plan.md)
 
 ## 審査基準への対応
 
@@ -76,7 +91,15 @@ MVP では Level 1 から Level 2 を中心に扱い、高額購入、医療、�
 
 ## 今後の展開
 
+書類審査通過後の Construction フェーズで、以下を MVP プロトタイプとして実装します。
+
+- Slice 1: Safe Instant Decision (即決ボタンと Safety Guardrails)
+- Slice 2: Morning Lifestyle Plan (朝の生活プランと準備支援)
+- Slice 3: Laziness Level (委譲モードと怠惰レベル可視化)
+
+その後の拡張方針は次の通りです。
+
 - カレンダー、位置情報、購買履歴などの連携によるコンテキスト精度の向上
 - 怠惰レベルに応じた半自動化範囲の拡大
 - 家族、チーム、旅行など複数人の低リスク判断への応用
-- UI プロトタイプ、デモシナリオ、評価指標の追加
+- Amazon SNS / Pinpoint による朝の push 通知などの配信チャネル追加
