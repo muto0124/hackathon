@@ -19,7 +19,6 @@
 
 ## Code Location Rules
 
-- 実装作業は `D:\hackathon\.worktrees\t-ai-da-documents` 配下で実施した。
 - 成果物は `README.md` と `aidlc-docs/` 配下に集約する。
 - 設計メモと実行計画は `docs/superpowers/` 配下に保持する。
 

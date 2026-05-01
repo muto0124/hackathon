@@ -9,6 +9,7 @@
 | Morning Plan Service | Safety Guardrails | 低リスク領域だけを自動決定するため。 |
 | Morning Plan Service | Preparation Assistant | 判断後の準備支援を生成するため。 |
 | Instant Decision Service | Decision Orchestrator | 即決判断を統合するため。 |
+| Instant Decision Service | User Context | 曖昧な入力を登録済みの好み、予定、予算で補完するため。 |
 | Instant Decision Service | Safety Guardrails | 高リスク判断を制限するため。 |
 | Decision Orchestrator | User Context | 文脈に沿った判断を生成するため。 |
 | Decision Orchestrator | Laziness Level | 委譲モードを決定するため。 |
