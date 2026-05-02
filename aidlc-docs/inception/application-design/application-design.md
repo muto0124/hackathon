@@ -25,6 +25,10 @@ flowchart LR
     PREP --> S3["Amazon S3 / Static Assets"]
 ```
 
+## MVP コスト概算
+
+MVP スケール（数ユーザー、朝のプラン生成 + 即決ボタン 30 回 / 日）での概算は月 **¥200–600 程度**。Amazon Bedrock（Haiku モデル）がコストドライバーで、Lambda・DynamoDB・API Gateway は無料枠内に収まる。ユーザー数が増えると Bedrock 利用量が線形に増加する。
+
 ## Interaction Flows
 
 ### 朝の生活プラン生成フロー

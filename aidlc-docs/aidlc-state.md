@@ -49,4 +49,6 @@
 
 ## Next Recommended Step
 
-提出前に GitHub 公開リポジトリへ反映し、README の相対リンクが GitHub 上で解決できることを確認する。予選へ進む場合は、Construction フェーズとして Safe Instant Decision と Morning Lifestyle Plan の MVP プロトタイプを実装する。
+書類審査提出に向けた準備は完了。次は Construction フェーズ Slice 1（Safe Instant Decision）から着手する。
+
+実装順序: UOW-02（ユーザー文脈モック） → UOW-04（Safety Guardrails ルールベース分類） → UOW-01（Decision Core + Bedrock 呼び出し） → UOW-06（結果表示）
