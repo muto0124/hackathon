@@ -25,6 +25,69 @@ flowchart LR
     PREP --> S3["Amazon S3 / Static Assets"]
 ```
 
+## Interaction Flows
+
+### 朝の生活プラン生成フロー
+
+```mermaid
+sequenceDiagram
+    participant ES as EventBridge Scheduler
+    participant OC as Lambda (Decision Orchestrator)
+    participant UC as DynamoDB (User Context)
+    participant SG as Safety Guardrails
+    participant BR as Amazon Bedrock
+    participant PA as Preparation Assistant
+    participant ND as Notification and Delivery
+    participant UI as User (API Gateway)
+
+    ES->>OC: 朝の定刻トリガー
+    OC->>UC: loadContext(userId, date)
+    UC-->>OC: 天気、予定、好み、予算
+    OC->>OC: calculateDelegationMode()
+    OC->>SG: evaluateDecisionRisk(plan candidates)
+    SG-->>OC: Allowed / 承認必須 / 対象外
+    OC->>BR: 生活プラン生成（Allowed 項目のみ）
+    BR-->>OC: 食事・服装・夜の過ごし方
+    OC->>PA: generatePreparation(decision)
+    PA-->>OC: 買い物リスト、店舗候補、ルート候補
+    OC->>UC: saveDecisionHistory()
+    OC->>ND: deliverDecision(userId, plan)
+    UI->>ND: GET /today-plan
+    ND-->>UI: 生活プラン + 準備支援
+```
+
+### 即決ボタンフロー
+
+```mermaid
+sequenceDiagram
+    participant UI as User
+    participant AG as API Gateway
+    participant OC as Lambda (Decision Orchestrator)
+    participant UC as DynamoDB (User Context)
+    participant SG as Safety Guardrails
+    participant BR as Amazon Bedrock
+
+    UI->>AG: POST /decide {"query": "今夜の夕食は？"}
+    AG->>OC: decideNow(userId, request)
+    OC->>UC: loadContext(userId)
+    UC-->>OC: 好み、予算、位置情報
+    OC->>SG: evaluateDecisionRisk(request)
+    alt 低リスク
+        SG-->>OC: Allowed
+        OC->>BR: 一択判断生成
+        BR-->>OC: 判断 + 理由
+        OC->>BR: 準備支援生成
+        BR-->>OC: 店舗候補、注文リンク候補
+        OC->>UC: saveDecisionHistory()
+        OC-->>AG: 判断 + 準備支援
+        AG-->>UI: 「鶏鍋にしてください。近所のスーパーで材料が揃います。」
+    else 高リスク
+        SG-->>OC: 承認必須 / 対象外
+        OC-->>AG: 制限理由
+        AG-->>UI: 「その判断は私の範疇外です。ご自身でお決めください。」
+    end
+```
+
 ## Detailed Artifacts
 
 - [Components](components.md)

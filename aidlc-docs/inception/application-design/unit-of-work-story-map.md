@@ -4,6 +4,7 @@
 
 | Story | Summary | Primary Unit | Supporting Units |
 | --- | --- | --- | --- |
+| US-000 | T-AI-DA に自分のことを教える | UOW-02 Context and Preference Memory | UOW-06 |
 | US-001 | 朝の生活プランを受け取る | UOW-01 Decision Core | UOW-02, UOW-04, UOW-05, UOW-06 |
 | US-002 | 食事を一択で決めてもらう | UOW-01 Decision Core | UOW-02, UOW-05, UOW-06 |
 | US-003 | 服装を決めてもらう | UOW-02 Context and Preference Memory | UOW-01, UOW-06 |

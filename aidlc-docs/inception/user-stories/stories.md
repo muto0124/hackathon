@@ -1,5 +1,25 @@
 # User Stories
 
+## Story US-000: T-AI-DA に自分のことを教える
+
+As a T-AI-DA を初めて使うユーザー,
+I want 自分の好み、予算、生活圏を登録したい,
+so that T-AI-DA が自分に合った一択の判断を返せるようになる。
+
+### Acceptance Criteria
+
+- Given ユーザーが T-AI-DA を初めて起動した, when セットアップ画面が表示される, then 食の好み、予算感、生活圏の入力を促す。
+- Given 最小限の好みと予算が登録されている, when 初回の生活プランを生成する, then 不足情報を補完しながら一択のプランを提示する。
+- Given 登録情報が不足している, when 判断を依頼する, then T-AI-DA は不足している情報を短く問い、補完した上で一択回答を返す。
+- Given 登録情報を変更したい, when ユーザーが設定を更新する, then 次回以降の判断に反映される。
+
+### Linked Requirements
+
+- FR-007
+- DCR-003
+- DCR-005
+- NFR-004
+
 ## Story US-001: 朝の生活プランを受け取る
 
 As a 一人暮らしの決断疲れビジネスパーソン,
@@ -155,6 +175,7 @@ so that 決定から行動までの摩擦を減らせる。
 
 | Story | Primary Persona | Key Components |
 | --- | --- | --- |
+| US-000 | 全ペルソナ | User Context |
 | US-001 | 佐藤 悠真 | Decision Orchestrator, User Context, Preparation Assistant |
 | US-002 | 佐藤 悠真 | Decision Orchestrator, T-AI-DA Persona, Preparation Assistant |
 | US-003 | 佐藤 悠真 | User Context, Decision Orchestrator |
