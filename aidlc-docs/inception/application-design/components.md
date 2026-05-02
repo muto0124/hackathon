@@ -24,7 +24,7 @@
 | Preparation Assistant | AWS Lambda, Amazon Bedrock, external API adapters |
 | Notification and Delivery | Amazon API Gateway (in-app 配信), EventBridge Scheduler (朝の起動), Amazon CloudWatch (配信状態の観測), Future: Amazon SNS / Amazon Pinpoint (push 通知 / メール) |
 
-MVP では、朝の生活プラン生成は EventBridge Scheduler から起動し、結果を Amazon DynamoDB に保存する。ユーザーは API Gateway 経由で in-app 表示として受け取る pull モデルを採用する。push 通知やメール配信は将来拡張として Amazon SNS または Amazon Pinpoint で追加できる構成にする。
+MVP では、朝の生活プラン生成は EventBridge Scheduler から起動し、結果を Amazon DynamoDB に保存する。ユーザーは API Gateway 経由でアプリ内表示を参照する pull モデルを採用する。push 通知やメール配信は将来拡張として Amazon SNS または Amazon Pinpoint で追加できる構成にする。
 
 ## Component Boundaries
 

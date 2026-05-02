@@ -16,7 +16,7 @@ flowchart TD
     U6 -. "runtime feedback" .-> U2
 ```
 
-実線は Build-time Dependency、破線は Runtime Feedback Flow を示す。Runtime Feedback Flow は、UOW-06 が捕捉したユーザー反応 (承認、却下、修正) を UOW-02 へ非同期に書き込む経路であり、UOW-02 の初期実装には不要なため、ビルド順依存には含めない。
+実線は Build-time Dependency、破線は Runtime Feedback Flow を示す。Runtime Feedback Flow は、UOW-06 が捕捉したユーザー反応 (承認、却下、修正) を UOW-02 へ非同期に書き込む経路であり、UOW-02 の初期実装には不要なため、実装順序の依存関係には含めない。
 
 ## Build-time Dependency Table
 
